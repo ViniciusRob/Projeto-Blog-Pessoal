@@ -1,7 +1,6 @@
 package br.org.generation.blogPessoal.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +34,7 @@ public class PostagemController {
 	
 	//Consultar Postagem por ID
 	@GetMapping("/{id}")
-	public ResponseEntity<Postagem> findByIDPostagem(@PathVariable long id){
+	public ResponseEntity<Postagem> findByIdPostagem(@PathVariable long id){
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
 				                      .orElse(ResponseEntity.notFound().build()) ;
 	}
